@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Star Center – מזכירות חיצונית לעסקים</title>
+<meta name="description" content="נציג אנושי עונה לכל שיחה לעסק שלך מ-06:00 עד 24:00, ב-3 ₪ לדקת שיחה. בלי מספר חדש ובלי דמי הקמה.">
+<meta property="og:title" content="Star Center – אף שיחה לא נשארת בלי מענה">
+<meta property="og:description" content="מזכירות חיצונית לעסקים: מענה אנושי מ-06:00 עד 24:00, ב-3 ₪ לדקה.">
+<meta property="og:locale" content="he_IL">
+<meta name="theme-color" content="#5B21B6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#5B21B6; --accent-dark:#3B0F80; --accent-soft:#EFE9FF; --tint:#F3EFFD;
+  --ink:#1E1B2E; --muted:#4B4563; --line:#E6E0F5; --bg:#FBFAFF; --card:#FFFFFF;
+  --wa:#128C4A; --err:#B42318;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Heebo,Arial,sans-serif;font-size:17px;line-height:1.6}
+a{color:var(--accent)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{margin:0;line-height:1.15;font-weight:800}
+h2{font-size:clamp(28px,4vw,36px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;font:inherit;font-weight:800;font-size:18px;text-decoration:none;border:0;cursor:pointer}
+.btn-light{background:#fff;color:var(--accent)}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-accent:hover{background:var(--accent-dark)}
+:focus-visible{outline:3px solid #F59E0B;outline-offset:3px}
+
+/* hero */
+.hero{background:var(--accent);color:#fff;border-radius:0 0 40px 40px;padding:28px 0 64px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-size:22px;font-weight:800}
+.pill{background:rgba(255,255,255,.16);padding:6px 14px;border-radius:999px;font-size:15px;font-weight:500}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start;margin-top:48px}
+.hero h1{font-size:clamp(36px,6vw,56px)}
+.hero p.lead{font-size:clamp(18px,2.2vw,21px);color:#EDE7FF;margin:18px 0 28px;max-width:560px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:32px}
+.stat{background:#fff;color:var(--ink);border-radius:18px;padding:16px 18px}
+.stat b{display:block;font-size:clamp(20px,2.4vw,26px);color:var(--accent);font-weight:800;line-height:1.2}
+.stat span{font-size:15px;color:var(--muted)}
+
+/* form */
+.form-card{background:#fff;color:var(--ink);border-radius:28px;padding:28px;box-shadow:0 24px 60px rgba(30,10,80,.25)}
+.form-card h2{font-size:26px}
+.form-card .sub{color:var(--muted);margin:6px 0 18px;font-size:16px}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.field label{font-weight:700;font-size:15px}
+.field input,.field select,.field textarea{font:inherit;font-size:17px;min-height:50px;padding:10px 14px;border:1.5px solid var(--line);border-radius:14px;background:#fff;color:var(--ink);width:100%}
+.field textarea{min-height:84px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px var(--accent-soft)}
+.field .err{color:var(--err);font-size:14px;min-height:0}
+.field.invalid input{border-color:var(--err)}
+.form-card .btn{width:100%;background:var(--wa);color:#fff;margin-top:6px}
+.form-card .btn:hover{background:#0E6E3A}
+.fine{font-size:13px;color:var(--muted);margin:12px 0 0;text-align:center}
+.done{display:none;text-align:center;padding:12px 0}
+.done h3{font-size:24px;color:var(--accent);margin-bottom:8px}
+
+/* sections */
+section{padding:72px 0 0}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:28px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:28px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;display:flex;gap:16px;align-items:flex-start}
+.ico{width:48px;height:48px;flex:none;border-radius:14px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center}
+.card h3{font-size:19px;margin-bottom:4px}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.step .num{width:44px;height:44px;border-radius:999px;background:var(--accent);color:#fff;font-weight:800;font-size:20px;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.step h3{font-size:18px;margin-bottom:4px}
+.step p{margin:0;color:var(--muted);font-size:15px}
+.price{background:#fff;border:2px solid var(--accent);border-radius:28px;padding:32px 36px}
+.price-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.price-head .amount{font-size:clamp(48px,7vw,64px);font-weight:800;color:var(--accent);line-height:1}
+.price-head .per{font-size:18px;color:var(--muted)}
+.rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 32px;margin-top:24px;font-size:18px}
+.rows div{display:flex;justify-content:space-between;border-bottom:1px solid #ECE7F7;padding-bottom:12px}
+.price .note{font-size:15px;color:var(--muted);margin:16px 0 0}
+.faq{background:var(--tint);border-radius:18px;padding:20px 22px}
+.faq h3{font-size:18px;margin-bottom:4px}
+.faq p{margin:0;color:#3A3550;font-size:16px}
+.cta{margin:72px 0 56px;background:var(--ink);color:#fff;border-radius:28px;padding:36px 40px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.cta h2{font-size:30px}
+.cta p{margin:6px 0 0;color:#D9D3EE}
+footer{text-align:center;color:var(--muted);font-size:14px;padding:0 0 32px}
+
+/* floating whatsapp */
+.wa-float{position:fixed;left:20px;bottom:20px;width:60px;height:60px;border-radius:999px;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.25);z-index:10}
+
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:32px;margin-top:32px}
+  .grid2{grid-template-columns:1fr}
+  .grid3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rows{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .stats{grid-template-columns:1fr}
+  .grid3{grid-template-columns:1fr}
+  .form-card{padding:22px}
+  .price,.cta{padding:26px 22px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">Star Center</div>
+      <div class="pill">מזכירות חיצונית לעסקים</div>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <h1>אף שיחה לא נשארת<br>בלי מענה</h1>
+        <p class="lead">נציג אנושי עונה בשם העסק שלך, שואל את השאלות שבחרת, ושולח לך את פרטי הפנייה מיד בסיום השיחה. אתה ממשיך לעבוד, הלקוחות מקבלים מענה.</p>
+        <a class="btn btn-light" href="#lead">אני רוצה לשמוע עוד</a>
+        <div class="stats">
+          <div class="stat"><b><bdi dir="ltr" style="white-space:nowrap">06:00–24:00</bdi></b><span>18 שעות מענה ביום</span></div>
+          <div class="stat"><b>3 ₪</b><span>לדקת שיחה</span></div>
+          <div class="stat"><b>0 ₪</b><span>דמי הקמה</span></div>
+        </div>
+      </div>
+
+      <div class="form-card" id="lead">
+        <form id="leadForm" novalidate>
+          <h2>נחזור אליך היום</h2>
+          <p class="sub">השאר פרטים, ונשלח לך הצעה מותאמת לעסק שלך.</p>
+          <div class="field">
+            <label for="f-name">שם מלא</label>
+            <input id="f-name" name="name" autocomplete="name" required>
+            <div class="err" id="e-name"></div>
+          </div>
+          <div class="field">
+            <label for="f-biz">שם העסק</label>
+            <input id="f-biz" name="business" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="f-phone">טלפון</label>
+            <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" style="text-align:right" placeholder="050-0000000" required>
+            <div class="err" id="e-phone"></div>
+          </div>
+          <div class="field">
+            <label for="f-type">תחום העסק</label>
+            <select id="f-type" name="type">
+              <option value="">בחר תחום</option>
+              <option>משרד עורכי דין</option>
+              <option>עמותה</option>
+              <option>מרפאה / קליניקה</option>
+              <option>בעל מקצוע</option>
+              <option>אחר</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-msg">משהו שחשוב לך שנדע (לא חובה)</label>
+            <textarea id="f-msg" name="message"></textarea>
+          </div>
+          <button class="btn" type="submit">
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>
+            שליחה בוואטסאפ
+          </button>
+          <p class="fine">בלחיצה ייפתח וואטסאפ עם הפרטים שמילאת, ונשאר רק ללחוץ "שלח".</p>
+        </form>
+        <div class="done" id="done" role="status" aria-live="polite">
+          <h3>תודה!</h3>
+          <p>אם וואטסאפ לא נפתח, <a id="waRetry" href="#">לחץ כאן לשליחה</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section aria-labelledby="why">
+    <h2 id="why">למה להצטרף</h2>
+    <div class="grid2">
+      <div class="card"><div class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5B21B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><h3>שעות מענה ארוכות</h3><p>גם מוקדם בבוקר וגם בערב, כשלקוחות רבים מתקשרים.</p></div></div>
+      <div class="card"><div class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5B21B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div><div><h3>בלי מספר חדש ובלי התקנה</h3><p>מפנים את המספר הקיים, והלקוחות ממשיכים לחייג אליו.</p></div></div>
+      <div class="card"><div class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5B21B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div><div><h3>התסריט שלך</h3><p>אתה קובע מה הנציג אומר ושואל, ומשנה מתי שרוצה.</p></div></div>
+      <div class="card"><div class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5B21B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></div><div><h3>פרטי הפנייה מיד</h3><p>סיכום של כל שיחה מגיע אליך ברגע שהיא מסתיימת.</p></div></div>
+      <div class="card"><div class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5B21B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><div><h3>קביעת תורים במערכת שלך</h3><p>הנציג פותח את מערכת התורים שלך ישירות מהמסך.</p></div></div>
+      <div class="card"><div class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5B21B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div><div><h3>אתה בוחר מי עונה</h3><p>לכל נציג ציון על מהירות ואיכות המענה, ואתה מדרג שיחות.</p></div></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="how">
+    <h2 id="how">איך מצטרפים</h2>
+    <div class="grid3">
+      <div class="step"><div class="num">1</div><h3>שיחת היכרות</h3><p>נשמע מה העסק צריך ונשלח הצעת מחיר.</p></div>
+      <div class="step"><div class="num">2</div><h3>פתיחת חשבון</h3><p>נפתח לך חשבון ונרשום את מספר הטלפון של העסק.</p></div>
+      <div class="step"><div class="num">3</div><h3>כתיבת התסריט</h3><p>נוסח פתיחה, שאלות, מידע על העסק ותשובות מוכנות.</p></div>
+      <div class="step"><div class="num">4</div><h3>יעד להודעות</h3><p>אתה בוחר לאן מגיע סיכום כל שיחה.</p></div>
+      <div class="step"><div class="num">5</div><h3>הפניית הקו</h3><p>מפנים את השיחות מהמספר שלך אלינו. נעזור בהגדרה.</p></div>
+      <div class="step"><div class="num">6</div><h3>ניסיון והפעלה</h3><p>שיחת ניסיון משותפת, והשירות פועל.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="price">
+    <div class="price">
+      <div class="price-head">
+        <div><h2 id="price">מחיר פשוט</h2><div style="color:var(--muted);margin-top:6px">משלמים רק על מה שמדברים</div></div>
+        <div><span class="amount">300 ₪</span> <span class="per">לחודש</span></div>
+      </div>
+      <div class="rows">
+        <div><span>חבילה חודשית</span><strong>100 דקות</strong></div>
+        <div><span>דקה מעבר לחבילה</span><strong>3 ₪</strong></div>
+        <div><span>דמי הקמה</span><strong>ללא</strong></div>
+        <div><span>שעות מענה</span><strong dir="ltr">06:00–24:00</strong></div>
+      </div>
+      <p class="note">המחירים לפני מע"מ.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="faq">
+    <h2 id="faq">שאלות נפוצות</h2>
+    <div class="grid2">
+      <div class="faq"><h3>מה קורה לשיחה בין 24:00 ל-06:00?</h3><p>המתקשר שומע הודעה מוקלטת.</p></div>
+      <div class="faq"><h3>אפשר לשנות את התסריט?</h3><p>כן, בעצמך בחשבון שלך. השינוי נכנס מהשיחה הבאה.</p></div>
+      <div class="faq"><h3>מה אם עברתי את 100 הדקות?</h3><p>השירות ממשיך כרגיל, וכל דקה נוספת עולה 3 ₪.</p></div>
+      <div class="faq"><h3>יש התחייבות?</h3><p>אין התחייבות לתקופה. ביטול בהודעה של 30 יום מראש.</p></div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <div><h2>מוכנים להתחיל?</h2><p>השאירו פרטים ונחזור אליכם עוד היום.</p></div>
+    <a class="btn btn-accent" href="#lead">להשארת פרטים</a>
+  </div>
+</main>
+
+<footer>© <span id="year"></span> Star Center</footer>
+
+<a class="wa-float" id="waFloat" href="#" aria-label="שליחת הודעה בוואטסאפ" target="_blank" rel="noopener">
+  <svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>
+</a>
+
+<script>
+// ===== הגדרה: מספר הוואטסאפ שאליו יגיעו הלידים =====
+// בפורמט בינלאומי, בלי 0 בהתחלה ובלי מקפים. לדוגמה: 050-1234567 -> 972501234567
+const WHATSAPP_NUMBER = "972538321973";
+// ====================================================
+
+const waUrl = (text) => "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text);
+
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("waFloat").href = waUrl("היי, אשמח לשמוע על שירות המזכירות החיצונית");
+
+const form = document.getElementById("leadForm");
+const phoneOk = (v) => /^0\d{1,2}-?\d{7}$/.test(v.replace(/[\s]/g, "")) || /^\+?972\d{8,9}$/.test(v.replace(/[\s-]/g, ""));
+
+function setErr(id, msg) {
+  const el = document.getElementById("e-" + id);
+  el.textContent = msg;
+  el.parentElement.classList.toggle("invalid", !!msg);
+}
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const v = Object.fromEntries(new FormData(form).entries());
+  let ok = true;
+  if (!v.name.trim()) { setErr("name", "נא למלא שם"); ok = false; } else setErr("name", "");
+  if (!phoneOk(v.phone.trim())) { setErr("phone", "נא למלא מספר טלפון תקין"); ok = false; } else setErr("phone", "");
+  if (!ok) { form.querySelector(".invalid input").focus(); return; }
+
+  const lines = [
+    "ליד חדש מדף הנחיתה",
+    "שם: " + v.name.trim(),
+    v.business.trim() ? "עסק: " + v.business.trim() : "",
+    "טלפון: " + v.phone.trim(),
+    v.type ? "תחום: " + v.type : "",
+    v.message.trim() ? "הערה: " + v.message.trim() : ""
+  ].filter(Boolean);
+  const url = waUrl(lines.join("\n"));
+
+  document.getElementById("waRetry").href = url;
+  form.style.display = "none";
+  document.getElementById("done").style.display = "block";
+  window.open(url, "_blank", "noopener");
+});
+</script>
+</body>
+</html>
