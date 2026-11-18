@@ -92,8 +92,14 @@ h1,h2,h3{font-family:"Secular One",Assistant,sans-serif;font-weight:400;margin:0
 .steps button .bar i{display:block;height:100%;width:0;background:var(--signal)}
 .steps button[aria-selected="true"] .bar i{width:var(--p,0%)}
 .steps button.past .bar i{width:100%}
-.stage{padding:20px 22px 22px;min-height:440px}
-.panel[hidden]{display:none}
+.faces{display:grid}
+.face{grid-area:1/1;min-width:0}
+.face.off,.panel.off{visibility:hidden}
+.stage{padding:20px 22px 22px;display:grid}
+.panel{grid-area:1/1;min-width:0}
+.console-tools{display:flex;gap:8px}
+.flipbtn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:0 14px;border-radius:999px;background:rgba(255,181,71,.12);border:1px solid rgba(255,181,71,.5);color:var(--signal);font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.flipbtn:hover{background:rgba(255,181,71,.2)}
 .panel h3{font-size:20px;margin-bottom:4px}
 .panel .hint{color:var(--muted);font-size:15px;margin:0 0 6px}
 
@@ -101,7 +107,7 @@ h1,h2,h3{font-family:"Secular One",Assistant,sans-serif;font-weight:400;margin:0
 .chip-row{display:flex;flex-wrap:wrap;gap:8px}
 .qchip{background:rgba(255,255,255,.1);border:1px solid var(--edge-soft);border-radius:999px;padding:6px 14px;font-size:15px}
 .qchip small{color:var(--muted)}
-.tpl{width:100%;min-height:158px;resize:vertical;background:rgba(0,0,0,.25);color:var(--ink);border:1px solid var(--edge-soft);border-radius:20px;padding:12px 16px;font:inherit;font-size:16px;line-height:1.6;box-shadow:inset 0 2px 8px rgba(0,0,0,.25)}
+.tpl{width:100%;height:158px;resize:none;background:rgba(0,0,0,.25);color:var(--ink);border:1px solid var(--edge-soft);border-radius:20px;padding:12px 16px;font:inherit;font-size:16px;line-height:1.6;box-shadow:inset 0 2px 8px rgba(0,0,0,.25)}
 .tpl:focus{border-color:var(--signal);outline:none}
 .tokens{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .tokens button{background:rgba(255,181,71,.12);border:1px solid rgba(255,181,71,.55);color:var(--signal);border-radius:999px;padding:0 14px;min-height:40px;font:inherit;font-size:14px;font-weight:700;cursor:pointer}
@@ -126,12 +132,56 @@ h1,h2,h3{font-family:"Secular One",Assistant,sans-serif;font-weight:400;margin:0
 .wa-top{background:#1F2C34;color:#E9EDEF;display:flex;align-items:center;gap:10px;padding:14px 16px 12px;font-size:15px}
 .wa-top .av{width:34px;height:34px;border-radius:50%;background:var(--signal);color:var(--signal-ink);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
 .wa-top small{display:block;color:#8696A0;font-size:12px}
-.wa-body{background:#0B141A;padding:18px 12px 22px;min-height:260px;display:flex;flex-direction:column;justify-content:flex-end}
+.wa-body{background:#0B141A;padding:18px 12px 22px;height:280px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
 .bubble{align-self:flex-start;background:#005C4B;color:#E9EDEF;border-radius:16px 16px 4px 16px;padding:10px 12px 20px;max-width:92%;font-size:15px;line-height:1.55;white-space:pre-wrap;position:relative;transform-origin:bottom right}
 .bubble time{position:absolute;bottom:4px;left:10px;font-size:11px;color:#9FD3C7}
 .bubble.pop{animation:pop .35s ease-out}
 @keyframes pop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
 .demo-note{color:var(--muted);font-size:13px;text-align:center;margin:14px 0 0}
+/* הדמיית האפליקציה של העסק בנייד */
+.app{position:relative;max-width:300px;height:352px;margin:12px auto 0;border-radius:38px;border:7px solid rgba(255,255,255,.2);background:#F2F2F7;color:#1C1C1E;overflow:hidden;display:flex;flex-direction:column;font-size:14px;line-height:1.45;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.app-top{background:#fff;padding:14px 14px 10px;border-bottom:1px solid #E5E5EA}
+.app-top b{font-size:19px}
+.app-chips{display:flex;gap:6px;margin-top:8px}
+.app-chips span{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;background:#EFEFF4;color:#3C3C43}
+.app-chips span.on{background:#6D28D9;color:#fff}
+.app-list{flex:1;padding:10px;display:flex;flex-direction:column;gap:8px;overflow:hidden}
+.inq{background:#fff;border-radius:16px;padding:10px 12px;box-shadow:0 1px 2px rgba(0,0,0,.07);transition:transform .2s,box-shadow .2s}
+.inq.tap{transform:scale(.97);box-shadow:0 0 0 2px #7C3AED}
+.lead-row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.lead-name{font-weight:700;font-size:15px;display:flex;align-items:center;gap:6px}
+.lead-name .dot{width:8px;height:8px;border-radius:50%;background:#7C3AED}
+.lead-time{color:#8E8E93;font-size:12px}
+.lead-sub{color:#3C3C43}
+.lead-info{display:none;border-top:1px solid #F0F0F3;margin-top:8px;padding-top:6px;font-size:13px;color:#3C3C43}
+.inq.open .lead-info{display:block}
+.lead-info b{color:#1C1C1E}
+.acts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:8px}
+.acts span{display:flex;align-items:center;justify-content:center;gap:4px;min-height:34px;border-radius:12px;background:#F2F2F7;font-weight:700;font-size:13px;transition:transform .15s,filter .15s}
+.acts .act-wa{background:#25D366;color:#fff}
+.acts span.press,.wa-go.press,.dlg-ok.press{transform:scale(.93);filter:brightness(.9)}
+.tag{font-size:11px;font-weight:700;border-radius:999px;padding:2px 8px;white-space:nowrap}
+.tag-miss{background:#FFF1D6;color:#8A5300}
+.tag-ok{background:#DDF5E3;color:#1B6E30}
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.28)}
+.sheet{position:absolute;inset:auto 0 0 0;background:#fff;border-radius:22px 22px 0 0;padding:8px 12px 12px;box-shadow:0 -8px 24px rgba(0,0,0,.18)}
+.sheet .grab{width:36px;height:4px;border-radius:4px;background:#D1D1D6;margin:0 auto 8px}
+.sheet h4{margin:0 0 6px;font-size:15px}
+.opts{display:flex;flex-direction:column;gap:5px}
+.opt{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:36px;padding:0 10px;border:1px solid #E5E5EA;border-radius:12px;background:#fff;color:#1C1C1E;font:inherit;font-size:13px;font-weight:700;text-align:right;cursor:pointer}
+.opt[aria-checked="true"]{border-color:#7C3AED;background:#F4EEFF}
+.opt[aria-checked="true"]::after{content:"";width:8px;height:8px;border-radius:50%;background:#7C3AED}
+.wa-prev{background:#DCF8C6;border-radius:12px 12px 4px 12px;padding:7px 10px;margin:8px 0;font-size:13px;line-height:1.5;color:#111;min-height:78px}
+.wa-go{display:flex;align-items:center;justify-content:center;min-height:38px;border-radius:12px;background:#25D366;color:#fff;font-weight:700;transition:transform .15s,filter .15s}
+.dlg{position:absolute;left:14px;right:14px;top:96px;background:#fff;border-radius:18px;padding:14px;box-shadow:0 12px 30px rgba(0,0,0,.25);transition:opacity .25s}
+.dlg.gone{opacity:0;visibility:hidden}
+.dlg b{display:block;font-size:16px;margin-bottom:6px}
+.dlg-note{background:#F2F2F7;border-radius:10px;padding:6px 10px;font-size:13px;color:#3C3C43}
+.dlg-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.dlg-btns span{display:flex;align-items:center;justify-content:center;min-height:36px;border-radius:12px;font-weight:700;font-size:13px;background:#F2F2F7}
+.dlg-btns .dlg-ok{background:#6D28D9;color:#fff;transition:transform .15s,filter .15s}
+@media (max-width:420px){.console-title{font-size:13px}.flipbtn span{display:none}.flipbtn{padding:0 12px}}
+
 .mobile{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;margin-top:-60px;padding:26px 30px;border-radius:30px}
 .mobile .ico{width:60px;height:60px;border-radius:20px;background:rgba(255,181,71,.14);border:1px solid rgba(255,181,71,.35);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
 .mobile h2{font-size:clamp(22px,2.6vw,28px);margin:0 0 6px}
@@ -249,20 +299,25 @@ footer{color:var(--muted);font-size:15px;padding:8px 0 96px;text-align:center}
     </div>
 
     <div class="console" id="demo" role="region" aria-label="הדגמה: איך עובדת המערכת">
-      <div class="console-bar">
-        <span class="console-title">הדגמה: מרפאת שיניים</span>
-        <button class="playbtn" id="playBtn" type="button" aria-pressed="true">
-          <svg id="icoPause" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
-          <svg id="icoPlay" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M17 5v14L5 12z"/></svg>
-          <span id="playLbl">עצירה</span>
-        </button>
-      </div>
-      <div class="steps" role="tablist" aria-label="שלבי ההדגמה">
-        <button role="tab" id="t0" aria-controls="p0" aria-selected="true">1. העסק מגדיר<span class="bar"><i></i></span></button>
-        <button role="tab" id="t1" aria-controls="p1" aria-selected="false" tabindex="-1">2. הנציג עונה<span class="bar"><i></i></span></button>
-        <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">3. ההודעה מגיעה<span class="bar"><i></i></span></button>
-      </div>
-      <div class="stage">
+      <div class="faces">
+      <div class="face" id="faceA">
+        <div class="console-bar">
+          <span class="console-title">הדגמה: מרפאת שיניים</span>
+          <div class="console-tools">
+            <button class="flipbtn" type="button" data-flip="1" aria-label="בעל העסק בנייד"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg><span>בעל העסק בנייד</span></button>
+            <button class="playbtn" type="button" aria-pressed="true">
+              <svg class="icoPause" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+              <svg class="icoPlay" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M17 5v14L5 12z"/></svg>
+              <span class="playLbl">עצירה</span>
+            </button>
+          </div>
+        </div>
+        <div class="steps" role="tablist" aria-label="שלבי ההדגמה במוקד">
+          <button role="tab" id="t0" aria-controls="p0" aria-selected="true">1. העסק מגדיר<span class="bar"><i></i></span></button>
+          <button role="tab" id="t1" aria-controls="p1" aria-selected="false" tabindex="-1">2. הנציג עונה<span class="bar"><i></i></span></button>
+          <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">3. ההודעה מגיעה<span class="bar"><i></i></span></button>
+        </div>
+        <div class="stage">
         <div class="panel" id="p0" role="tabpanel" aria-labelledby="t0">
           <h3>התסריט וההודעה שלך</h3>
           <p class="hint">את זה אתה כותב בחשבון שלך. נסה לשנות את ההודעה.</p>
@@ -283,7 +338,7 @@ footer{color:var(--muted);font-size:15px;padding:8px 0 96px;text-align:center}
           </div>
         </div>
 
-        <div class="panel" id="p1" role="tabpanel" aria-labelledby="t1" hidden>
+        <div class="panel off" id="p1" role="tabpanel" aria-labelledby="t1">
           <div class="call-head" id="callHead">
             <div class="ring"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="#2B1A00"><path d="M20 15.5a11.4 11.4 0 0 1-3.6-.6 1 1 0 0 0-1 .3l-2.2 2.2a15 15 0 0 1-6.6-6.6l2.2-2.2a1 1 0 0 0 .3-1A11.4 11.4 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1 17 17 0 0 0 17 17 1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg></div>
             <div><b>שיחה נכנסת למרפאה</b><span>הנציג רואה את התסריט שלך ומקליד את התשובות</span></div>
@@ -291,7 +346,7 @@ footer{color:var(--muted);font-size:15px;padding:8px 0 96px;text-align:center}
           <ol class="qa" id="qa"></ol>
         </div>
 
-        <div class="panel" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+        <div class="panel off" id="p2" role="tabpanel" aria-labelledby="t2">
           <div class="phone">
             <div class="wa-top">
               <div class="av">SC</div>
@@ -300,7 +355,94 @@ footer{color:var(--muted);font-size:15px;padding:8px 0 96px;text-align:center}
             <div class="wa-body"><div class="bubble" id="bubble"></div></div>
           </div>
         </div>
+        </div>
         <p class="demo-note">הדגמה עם פרטים לדוגמה.</p>
+      </div>
+      <div class="face off" id="faceB">
+        <div class="console-bar">
+          <span class="console-title">הדגמה: בעל העסק בנייד</span>
+          <div class="console-tools">
+            <button class="flipbtn" type="button" data-flip="0" aria-label="חזרה למוקד"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg><span>חזרה למוקד</span></button>
+            <button class="playbtn" type="button" aria-pressed="true">
+              <svg class="icoPause" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+              <svg class="icoPlay" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M17 5v14L5 12z"/></svg>
+              <span class="playLbl">עצירה</span>
+            </button>
+          </div>
+        </div>
+        <div class="steps" role="tablist" aria-label="שלבי ההדגמה בנייד">
+          <button role="tab" id="t3" aria-controls="p3" aria-selected="true">1. פניות<span class="bar"><i></i></span></button>
+          <button role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1">2. וואטסאפ<span class="bar"><i></i></span></button>
+          <button role="tab" id="t5" aria-controls="p5" aria-selected="false" tabindex="-1">3. טופל<span class="bar"><i></i></span></button>
+        </div>
+        <div class="stage">
+        <div class="panel" id="p3" role="tabpanel" aria-labelledby="t3">
+          <h3>כל הפניות אצלך בנייד</h3>
+          <p class="hint">אתה, או מי שהרשית בעסק, רואים כל פנייה מיד כשהשיחה נסגרת.</p>
+          <div class="app" aria-hidden="true">
+            <div class="app-top"><b>פניות</b><div class="app-chips"><span class="on">לא טופלו <bdi class="cnt">2</bdi></span><span>היום</span><span>הכול</span></div></div>
+            <div class="app-list">
+              <div class="inq" id="leadA">
+                <div class="lead-row"><span class="lead-name"><i class="dot" aria-hidden="true"></i>דנה לוי</span><span class="lead-time"><bdi>10:42</bdi></span></div>
+                <div class="lead-sub">כאב בשן אחורית</div>
+                <div class="lead-info">
+                  <div>טלפון: <b><bdi dir="ltr">054-1234567</bdi></b></div>
+                  <div>מתי נוח להגיע: <b>מחר בבוקר</b></div>
+                  <div class="acts"><span class="act-call">חיוג</span><span class="act-wa">וואטסאפ</span><span>טופל</span></div>
+                </div>
+              </div>
+              <div class="inq">
+                <div class="lead-row"><span class="lead-name"><bdi dir="ltr">052-7654321</bdi></span><span class="lead-time"><bdi>09:15</bdi></span></div>
+                <div class="lead-row"><span class="lead-sub">שיחה שלא נענתה</span><span class="tag tag-miss">לא נענתה</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel off" id="p4" role="tabpanel" aria-labelledby="t4">
+          <h3>וואטסאפ בהודעה שכתבת</h3>
+          <p class="hint">בוחרים הודעה מוכנה, והיא נפתחת בוואטסאפ שלך עם פרטי הלקוח. נסה לבחור.</p>
+          <div class="app">
+            <div aria-hidden="true"><div class="app-top"><b>פניות</b><div class="app-chips"><span class="on">לא טופלו <bdi class="cnt">2</bdi></span><span>היום</span><span>הכול</span></div></div></div>
+            <div class="scrim" aria-hidden="true"></div>
+            <div class="sheet">
+              <div class="grab" aria-hidden="true"></div>
+              <h4>שליחה בוואטסאפ לדנה</h4>
+              <div class="opts" role="radiogroup" aria-label="הודעה מוכנה" id="waOpts">
+                <button type="button" class="opt" role="radio" aria-checked="true" data-k="0">אישור קבלת פנייה</button>
+                <button type="button" class="opt" role="radio" aria-checked="false" data-k="1">הצעת תור</button>
+              </div>
+              <div class="wa-prev" id="waPrev" aria-live="polite"></div>
+              <div class="wa-go" id="waGo" aria-hidden="true">פתיחה בוואטסאפ</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel off" id="p5" role="tabpanel" aria-labelledby="t5">
+          <h3>טיפלת? מסמנים</h3>
+          <p class="hint">אחרי וואטסאפ או חיוג מסמנים שטופל, וכל הצוות רואה מי טיפל ומתי.</p>
+          <div class="app" aria-hidden="true">
+            <div class="app-top"><b>פניות</b><div class="app-chips"><span class="on">לא טופלו <bdi class="cnt" id="doneCnt">2</bdi></span><span>היום</span><span>הכול</span></div></div>
+            <div class="app-list">
+              <div class="inq" id="leadDone">
+                <div class="lead-row"><span class="lead-name">דנה לוי</span><span class="tag tag-ok" id="doneTag" hidden></span></div>
+                <div class="lead-sub">כאב בשן אחורית</div>
+              </div>
+              <div class="inq">
+                <div class="lead-row"><span class="lead-name"><bdi dir="ltr">052-7654321</bdi></span><span class="lead-time"><bdi>09:15</bdi></span></div>
+                <div class="lead-row"><span class="lead-sub">שיחה שלא נענתה</span><span class="tag tag-miss">לא נענתה</span></div>
+              </div>
+            </div>
+            <div class="dlg" id="doneDlg">
+              <b>לסמן שטופל?</b>
+              <div class="dlg-note">נשלחה הודעת וואטסאפ</div>
+              <div class="dlg-btns"><span>לא עכשיו</span><span class="dlg-ok" id="doneOk">סימון שטופל</span></div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <p class="demo-note">הדגמה עם פרטים לדוגמה.</p>
+      </div>
       </div>
     </div>
   </div>
@@ -436,25 +578,33 @@ document.getElementById("waFloat").href = waUrl("היי, אשמח לשמוע ע�
 (function () {
   const SAMPLE = { "שם": "דנה לוי", "טלפון": "054-1234567", "סיבה": "כאב בשן אחורית", "מועד": "מחר בבוקר" };
   const QUESTIONS = [["שם המטופל", "שם"], ["טלפון לחזרה", "טלפון"], ["סיבת הפנייה", "סיבה"], ["מתי נוח להגיע?", "מועד"]];
+  const WA = [
+    "שלום דנה, קיבלנו את הפנייה שלך בנושא כאב בשן אחורית. נחזור אלייך עוד היום. מרפאת השיניים",
+    "היי דנה, יש לנו תור פנוי מחר ב-9:30. מתאים לך? אפשר לענות כאן. מרפאת השיניים"
+  ];
   const tpl = document.getElementById("tpl");
   tpl.value = "פנייה חדשה למרפאה\nשם: {שם}\nטלפון: {טלפון}\nסיבה: {סיבה}\nמועד מועדף: {מועד}";
 
-  const tabs = [0, 1, 2].map(i => document.getElementById("t" + i));
-  const panels = [0, 1, 2].map(i => document.getElementById("p" + i));
-  const playBtn = document.getElementById("playBtn");
+  const N = 6;
+  const tabs = [...Array(N)].map((_, i) => document.getElementById("t" + i));
+  const panels = [...Array(N)].map((_, i) => document.getElementById("p" + i));
+  const faces = [document.getElementById("faceA"), document.getElementById("faceB")];
+  const consoleEl = document.getElementById("demo");
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const DUR = [6000, 7500, 6000];
-  let step = 0, playing = !reduce, t0 = 0, timers = [];
+  const DUR = [6000, 7500, 6000, 6500, 7500, 6000];
+  const faceOf = (i) => (i < 3 ? 0 : 1);
+  let step = 0, face = 0, playing = !reduce, t0 = 0, timers = [], flipping = false;
 
   const clearTimers = () => { timers.forEach(clearTimeout); timers = []; };
+  const later = (ms, fn) => timers.push(setTimeout(fn, ms));
   const fill = (text) => text.replace(/\{(שם|טלפון|סיבה|מועד)\}/g, (_, k) => SAMPLE[k]);
+  const hhmm = () => { const d = new Date(); return String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0"); };
 
   function renderBubble(animate) {
     const b = document.getElementById("bubble");
     b.textContent = fill(tpl.value);
     const t = document.createElement("time");
-    const d = new Date();
-    t.textContent = String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0");
+    t.textContent = hhmm();
     b.appendChild(t);
     if (animate && !reduce) { b.classList.remove("pop"); void b.offsetWidth; b.classList.add("pop"); }
   }
@@ -477,46 +627,115 @@ document.getElementById("waFloat").href = waUrl("היי, אשמח לשמוע ע�
     items.forEach((li, i) => {
       const ans = SAMPLE[QUESTIONS[i][1]];
       const a = li.querySelector(".a");
-      timers.push(setTimeout(() => li.classList.add("on"), delay));
+      later(delay, () => li.classList.add("on"));
       for (let c = 1; c <= ans.length; c++) {
-        timers.push(setTimeout(() => {
+        later(delay + 250 + c * 45, () => {
           a.textContent = ans.slice(0, c);
           const caret = document.createElement("span"); caret.className = "caret"; a.appendChild(caret);
-        }, delay + 250 + c * 45));
+        });
       }
       delay += 250 + ans.length * 45 + 300;
-      timers.push(setTimeout(() => { li.classList.remove("on"); li.classList.add("filled"); a.textContent = ans; }, delay));
+      later(delay, () => { li.classList.remove("on"); li.classList.add("filled"); a.textContent = ans; });
     });
-    timers.push(setTimeout(() => head.classList.remove("calling"), delay));
+    later(delay, () => head.classList.remove("calling"));
+  }
+
+  /* הנייד של העסק */
+  function renderLeads(animate) {
+    const lead = document.getElementById("leadA");
+    const btns = lead.querySelectorAll(".acts span");
+    btns.forEach(b => b.classList.remove("press"));
+    lead.classList.remove("tap");
+    if (!animate || reduce) { lead.classList.add("open"); return; }
+    lead.classList.remove("open");
+    later(1400, () => lead.classList.add("tap"));
+    later(1750, () => { lead.classList.remove("tap"); lead.classList.add("open"); });
+    later(3600, () => btns[0].classList.add("press"));
+    later(3900, () => btns[0].classList.remove("press"));
+    later(5000, () => btns[1].classList.add("press"));
+  }
+  const opts = [...document.querySelectorAll("#waOpts .opt")];
+  function pickWa(k) {
+    opts.forEach((o, j) => { o.setAttribute("aria-checked", j === k); o.tabIndex = j === k ? 0 : -1; });
+    document.getElementById("waPrev").textContent = WA[k];
+  }
+  function renderWa(animate) {
+    const go = document.getElementById("waGo");
+    go.classList.remove("press");
+    pickWa(0);
+    if (!animate || reduce) return;
+    later(2600, () => pickWa(1));
+    later(4800, () => pickWa(0));
+    later(6200, () => go.classList.add("press"));
+  }
+  function renderDone(animate) {
+    const dlg = document.getElementById("doneDlg"), ok = document.getElementById("doneOk");
+    const tag = document.getElementById("doneTag"), cnt = document.getElementById("doneCnt");
+    const finish = () => {
+      ok.classList.remove("press"); dlg.classList.add("gone");
+      tag.textContent = "טופל · מיכל · " + hhmm(); tag.hidden = false; cnt.textContent = "1";
+    };
+    ok.classList.remove("press"); dlg.classList.remove("gone"); tag.hidden = true; cnt.textContent = "2";
+    if (!animate || reduce) { finish(); return; }
+    later(2200, () => ok.classList.add("press"));
+    later(2500, finish);
+  }
+
+  function setFace(f) {
+    face = f;
+    faces.forEach((el, k) => { const on = k === f; el.classList.toggle("off", !on); el.inert = !on; });
+  }
+  function flipTo(f, then) {
+    if (reduce || !consoleEl.animate) { setFace(f); then(); return; }
+    flipping = true;
+    const persp = "perspective(1600px) ";
+    consoleEl.animate([{ transform: persp + "rotateY(0deg)" }, { transform: persp + "rotateY(90deg)" }], { duration: 260, easing: "ease-in" }).onfinish = () => {
+      setFace(f); then();
+      consoleEl.animate([{ transform: persp + "rotateY(-90deg)" }, { transform: persp + "rotateY(0deg)" }], { duration: 320, easing: "ease-out" }).onfinish = () => {
+        flipping = false; t0 = performance.now();
+      };
+    };
   }
   function show(i, fromUser) {
-    step = i; clearTimers();
-    tabs.forEach((t, k) => {
-      const on = k === i;
-      t.setAttribute("aria-selected", on); t.tabIndex = on ? 0 : -1;
-      t.classList.toggle("past", k < i);
-      t.style.setProperty("--p", "0%");
-      panels[k].hidden = !on;
-    });
-    if (i === 1) renderCall(playing || fromUser);
-    if (i === 2) renderBubble(true);
-    t0 = performance.now();
-    if (fromUser) tabs[i].focus();
+    clearTimers();
+    const f = faceOf(i);
+    const apply = () => {
+      step = i;
+      tabs.forEach((t, k) => {
+        const on = k === i;
+        t.setAttribute("aria-selected", on); t.tabIndex = on || (faceOf(k) !== f && k % 3 === 0) ? 0 : -1;
+        t.classList.toggle("past", faceOf(k) === f && k < i);
+        t.style.setProperty("--p", "0%");
+        panels[k].classList.toggle("off", !(faceOf(k) === f ? on : k % 3 === 0));
+      });
+      const anim = playing || fromUser;
+      if (i === 1) renderCall(anim);
+      if (i === 2) renderBubble(true);
+      if (i === 3) renderLeads(anim);
+      if (i === 4) renderWa(anim);
+      if (i === 5) renderDone(anim);
+      t0 = performance.now();
+      if (fromUser) tabs[i].focus();
+    };
+    if (f !== face) flipTo(f, apply); else apply();
   }
   function tick(now) {
-    if (playing) {
-      const p = Math.min(1, (now - t0) / DUR[step]);
+    if (playing && !flipping) {
+      const p = Math.min(1, Math.max(0, (now - t0) / DUR[step]));
       tabs[step].style.setProperty("--p", (p * 100).toFixed(1) + "%");
-      if (p >= 1) show((step + 1) % 3, false);
+      if (p >= 1) show((step + 1) % N, false);
     }
     requestAnimationFrame(tick);
   }
+  const playBtns = [...document.querySelectorAll(".playbtn")];
   function setPlaying(on) {
     playing = on;
-    playBtn.setAttribute("aria-pressed", on);
-    document.getElementById("playLbl").textContent = on ? "עצירה" : "הפעלה";
-    document.getElementById("icoPause").style.display = on ? "" : "none";
-    document.getElementById("icoPlay").style.display = on ? "none" : "";
+    playBtns.forEach(b => {
+      b.setAttribute("aria-pressed", on);
+      b.querySelector(".playLbl").textContent = on ? "עצירה" : "הפעלה";
+      b.querySelector(".icoPause").style.display = on ? "" : "none";
+      b.querySelector(".icoPlay").style.display = on ? "none" : "";
+    });
     if (on) {
       const done = (parseFloat(tabs[step].style.getPropertyValue("--p")) || 0) / 100;
       t0 = performance.now() - done * DUR[step];
@@ -527,10 +746,25 @@ document.getElementById("waFloat").href = waUrl("היי, אשמח לשמוע ע�
     t.addEventListener("click", () => { setPlaying(false); show(i, true); });
     t.addEventListener("keydown", e => {
       const dir = e.key === "ArrowLeft" ? 1 : e.key === "ArrowRight" ? -1 : 0;
-      if (dir) { e.preventDefault(); setPlaying(false); show((i + dir + 3) % 3, true); }
+      if (!dir) return;
+      e.preventDefault(); setPlaying(false);
+      const base = faceOf(i) * 3;
+      show(base + ((i - base + dir + 3) % 3), true);
     });
   });
-  playBtn.addEventListener("click", () => setPlaying(!playing));
+  playBtns.forEach(b => b.addEventListener("click", () => setPlaying(!playing)));
+  document.querySelectorAll(".flipbtn").forEach(b => b.addEventListener("click", () => {
+    setPlaying(false); show(Number(b.dataset.flip) * 3, true);
+  }));
+  opts.forEach((o, k) => {
+    o.addEventListener("click", () => { setPlaying(false); clearTimers(); pickWa(k); });
+    o.addEventListener("keydown", e => {
+      const dir = e.key === "ArrowDown" || e.key === "ArrowLeft" ? 1 : e.key === "ArrowUp" || e.key === "ArrowRight" ? -1 : 0;
+      if (!dir) return;
+      e.preventDefault(); setPlaying(false); clearTimers();
+      const n = (k + dir + opts.length) % opts.length; pickWa(n); opts[n].focus();
+    });
+  });
   tpl.addEventListener("focus", () => setPlaying(false));
   tpl.addEventListener("input", () => renderBubble(false));
   document.querySelectorAll(".tokens button").forEach(b => b.addEventListener("click", () => {
@@ -541,7 +775,9 @@ document.getElementById("waFloat").href = waUrl("היי, אשמח לשמוע ע�
     renderBubble(false);
   }));
 
-  renderBubble(false);
+  // מצב התחלתי של הצד השני, כדי שהגובה יחושב לפי התוכן המלא
+  renderCall(false); renderBubble(false); renderLeads(false); renderWa(false); renderDone(false);
+  setFace(0);
   setPlaying(playing);
   show(0, false);
   requestAnimationFrame(tick);
