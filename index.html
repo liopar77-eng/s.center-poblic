@@ -4,225 +4,357 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Star Center – מזכירות חיצונית לעסקים</title>
-<meta name="description" content="נציג אנושי עונה לכל שיחה לעסק שלך ומטפל בכל מה שתגדיר, במחירים אטרקטיביים. בלי מספר חדש, בלי דמי הקמה ובלי התחייבות.">
-<meta property="og:title" content="Star Center – אף שיחה לא נשארת בלי מענה">
-<meta property="og:description" content="מזכירות חיצונית לעסקים: מענה אנושי בשם העסק שלך, במחירים אטרקטיביים וללא התחייבות.">
+<meta name="description" content="נציג אנושי עונה לשיחות בשם העסק שלך, לפי תסריט שאתה כותב, ושולח לך כל פנייה בהודעה שאתה מעצב. ללא דמי הקמה וללא התחייבות.">
+<meta property="og:title" content="Star Center – הנציג עונה, אתה מחליט">
+<meta property="og:description" content="מזכירות חיצונית לעסקים: תסריט שאתה כותב, הודעה שאתה מעצב, ללא התחייבות.">
 <meta property="og:locale" content="he_IL">
-<meta name="theme-color" content="#5B21B6">
+<meta name="theme-color" content="#1A1033">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --accent:#5B21B6; --accent-dark:#3B0F80; --accent-soft:#EFE9FF; --tint:#F3EFFD;
-  --ink:#1E1B2E; --muted:#4B4563; --line:#E6E0F5; --bg:#FBFAFF; --card:#FFFFFF;
-  --wa:#128C4A; --err:#B42318;
+  --night:#1A1033;
+  --deep:#221544;
+  --plum:#2E1E5A;
+  --line:#43327A;
+  --ink:#F4EFFF;
+  --muted:#BDB2DB;
+  --signal:#FFB547;
+  --signal-ink:#2B1A00;
+  --wa-dark:#0B6B3A;
+  --err:#FF8A80;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Heebo,Arial,sans-serif;font-size:17px;line-height:1.6}
-a{color:var(--accent)}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-h1,h2,h3{margin:0;line-height:1.15;font-weight:800}
-h2{font-size:clamp(28px,4vw,36px)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;font:inherit;font-weight:800;font-size:18px;text-decoration:none;border:0;cursor:pointer}
-.btn-light{background:#fff;color:var(--accent)}
-.btn-accent{background:var(--accent);color:#fff}
-.btn-accent:hover{background:var(--accent-dark)}
-:focus-visible{outline:3px solid #F59E0B;outline-offset:3px}
+body{margin:0;background:var(--night);color:var(--ink);font-family:Assistant,Arial,sans-serif;font-size:18px;line-height:1.65}
+a{color:var(--signal)}
+h1,h2,h3{font-family:"Secular One",Assistant,sans-serif;font-weight:400;margin:0;line-height:1.15}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:14px;font:inherit;font-weight:800;font-size:18px;text-decoration:none;border:0;cursor:pointer}
+.btn-signal{background:var(--signal);color:var(--signal-ink)}
+.btn-signal:hover{background:#FFC56E}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--muted)}
 
-/* hero */
-.hero{background:var(--accent);color:#fff;border-radius:0 0 40px 40px;padding:28px 0 64px}
-.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.brand{font-size:22px;font-weight:800}
-.pill{background:rgba(255,255,255,.16);padding:6px 14px;border-radius:999px;font-size:15px;font-weight:500}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start;margin-top:48px}
-.hero h1{font-size:clamp(36px,6vw,56px)}
-.hero p.lead{font-size:clamp(18px,2.2vw,21px);color:#EDE7FF;margin:18px 0 28px;max-width:560px}
-.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:32px}
-.stat{background:#fff;color:var(--ink);border-radius:18px;padding:16px 18px}
-.stat b{display:block;font-size:clamp(20px,2.4vw,26px);color:var(--accent);font-weight:800;line-height:1.2}
-.stat span{font-size:15px;color:var(--muted)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Secular One",sans-serif;font-size:24px;color:var(--ink);text-decoration:none}
+.brand svg{flex:none}
+.top nav{display:flex;gap:22px;align-items:center}
+.top nav a{color:var(--muted);text-decoration:none;font-weight:600}
+.top nav a:hover{color:var(--ink)}
+.top nav .btn{min-height:44px;padding:0 18px;font-size:16px;color:var(--signal-ink)}
+.top nav .btn:hover{color:var(--signal-ink)}
 
-/* form */
-.form-card{background:#fff;color:var(--ink);border-radius:28px;padding:28px;box-shadow:0 24px 60px rgba(30,10,80,.25)}
-.form-card h2{font-size:26px}
-.form-card .sub{color:var(--muted);margin:6px 0 18px;font-size:16px}
+.hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:center;padding:40px 0 88px}
+.hero h1{font-size:clamp(40px,5.4vw,64px);letter-spacing:-.5px}
+.hero .lead{font-size:clamp(18px,2vw,21px);color:var(--muted);margin:22px 0 32px;max-width:520px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.facts{display:flex;gap:28px;flex-wrap:wrap;margin:36px 0 0;padding:0;list-style:none;color:var(--muted);font-size:16px}
+.facts li{display:flex;gap:8px;align-items:center}
+.facts svg{flex:none}
+
+.console{background:var(--deep);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 30px 80px rgba(6,2,20,.55)}
+.console-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--plum)}
+.console-title{font-weight:700;font-size:15px;color:var(--muted)}
+.playbtn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border-radius:10px;background:transparent;border:1px solid var(--line);color:var(--ink);font:inherit;font-size:15px;font-weight:700;cursor:pointer}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid var(--line)}
+.steps button{position:relative;background:none;border:0;color:var(--muted);font:inherit;font-size:15px;font-weight:700;padding:14px 8px 16px;cursor:pointer;min-height:52px;text-align:center}
+.steps button[aria-selected="true"]{color:var(--ink)}
+.steps button .bar{position:absolute;inset:auto 10px 0 10px;height:3px;background:var(--line);border-radius:3px;overflow:hidden}
+.steps button .bar i{display:block;height:100%;width:0;background:var(--signal)}
+.steps button[aria-selected="true"] .bar i{width:var(--p,0%)}
+.steps button.past .bar i{width:100%}
+.stage{padding:22px;min-height:440px}
+.panel[hidden]{display:none}
+.panel h3{font-size:20px;margin-bottom:4px}
+.panel .hint{color:var(--muted);font-size:15px;margin:0 0 6px}
+
+.field-label{font-size:14px;font-weight:700;color:var(--muted);margin:14px 0 6px;display:block}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px}
+.qchip{background:var(--plum);border:1px solid var(--line);border-radius:10px;padding:6px 12px;font-size:15px}
+.qchip small{color:var(--muted)}
+.tpl{width:100%;min-height:158px;resize:vertical;background:var(--night);color:var(--ink);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;font:inherit;font-size:16px;line-height:1.6}
+.tpl:focus{border-color:var(--signal);outline:none}
+.tokens{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.tokens button{background:transparent;border:1px dashed var(--signal);color:var(--signal);border-radius:999px;padding:0 14px;min-height:40px;font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+
+.call-head{display:flex;align-items:center;gap:14px;background:var(--plum);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:16px}
+.ring{width:44px;height:44px;flex:none;border-radius:50%;background:var(--signal);display:flex;align-items:center;justify-content:center}
+.calling .ring{animation:pulse 1.4s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,181,71,.55)}100%{box-shadow:0 0 0 14px rgba(255,181,71,0)}}
+.call-head b{display:block;font-size:17px}
+.call-head span{color:var(--muted);font-size:14px}
+.qa{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.qa li{border:1px solid var(--line);border-radius:12px;padding:8px 14px;opacity:.45;transition:opacity .3s,border-color .3s}
+.qa li.on{opacity:1;border-color:var(--signal)}
+.qa li.filled{opacity:1}
+.qa .q{font-size:14px;color:var(--muted)}
+.qa .a{font-weight:700;min-height:1.6em}
+.qa .a .caret{display:inline-block;width:2px;height:1em;background:var(--signal);vertical-align:-2px;margin-inline-start:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+.phone{max-width:320px;margin:0 auto;background:#0B141A;border-radius:28px;border:6px solid #2A2F45;overflow:hidden}
+.wa-top{background:#1F2C34;color:#E9EDEF;display:flex;align-items:center;gap:10px;padding:12px 14px;font-size:15px}
+.wa-top .av{width:34px;height:34px;border-radius:50%;background:var(--signal);color:var(--signal-ink);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+.wa-top small{display:block;color:#8696A0;font-size:12px}
+.wa-body{background:#0B141A;padding:18px 12px 22px;min-height:260px;display:flex;flex-direction:column;justify-content:flex-end}
+.bubble{align-self:flex-start;background:#005C4B;color:#E9EDEF;border-radius:12px 12px 2px 12px;padding:10px 12px 20px;max-width:92%;font-size:15px;line-height:1.55;white-space:pre-wrap;position:relative;transform-origin:bottom right}
+.bubble time{position:absolute;bottom:4px;left:10px;font-size:11px;color:#9FD3C7}
+.bubble.pop{animation:pop .35s ease-out}
+@keyframes pop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+.demo-note{color:var(--muted);font-size:13px;text-align:center;margin:14px 0 0}
+
+section{padding:88px 0 0}
+.sec-head{max-width:640px;margin-bottom:36px}
+.sec-head h2{font-size:clamp(30px,4vw,44px)}
+.sec-head p{color:var(--muted);margin:12px 0 0}
+.feature{display:grid;grid-template-columns:80px minmax(0,1fr);gap:20px;padding:28px 0;border-top:1px solid var(--line)}
+.feature .ico{width:64px;height:64px;border-radius:18px;background:var(--plum);border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+.feature h3{font-size:24px;margin-bottom:6px}
+.feature p{margin:0;color:var(--muted);max-width:640px}
+.more{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 40px;padding:28px 0 0;border-top:1px solid var(--line)}
+.more div b{display:block;font-size:18px;margin-bottom:2px}
+.more div span{color:var(--muted);font-size:16px}
+ol.join{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;counter-reset:s}
+ol.join li{counter-increment:s;position:relative;padding-top:58px}
+ol.join li::before{content:counter(s);position:absolute;top:0;right:0;width:42px;height:42px;border-radius:50%;border:2px solid var(--signal);color:var(--signal);font-family:"Secular One",sans-serif;font-size:20px;display:flex;align-items:center;justify-content:center}
+ol.join h3{font-size:21px;margin-bottom:4px}
+ol.join p{margin:0;color:var(--muted);font-size:16px}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-of-type{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-weight:700;font-size:19px;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:"Secular One",sans-serif;font-size:26px;color:var(--signal);flex:none}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin:0 0 18px;color:var(--muted);max-width:680px}
+
+.lead-box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start;background:var(--deep);border:1px solid var(--line);border-radius:28px;padding:48px;margin:88px 0 64px}
+.lead-box h2{font-size:clamp(30px,4vw,44px)}
+.lead-box .intro p{color:var(--muted);margin:14px 0 0}
 .field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
 .field label{font-weight:700;font-size:15px}
-.field input,.field select,.field textarea{font:inherit;font-size:17px;min-height:50px;padding:10px 14px;border:1.5px solid var(--line);border-radius:14px;background:#fff;color:var(--ink);width:100%}
+.field input,.field select,.field textarea{font:inherit;font-size:17px;min-height:50px;padding:10px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--night);color:var(--ink);width:100%}
 .field textarea{min-height:84px;resize:vertical}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px var(--accent-soft)}
-.field .err{color:var(--err);font-size:14px;min-height:0}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--signal);outline:none}
+.field .err{color:var(--err);font-size:14px}
 .field.invalid input{border-color:var(--err)}
-.form-card .btn{width:100%;background:var(--accent);color:#fff;margin-top:6px}
-.form-card .btn:hover{background:var(--accent-dark)}
-.form-card .btn:disabled{opacity:.7;cursor:wait}
-.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
-.err-send{color:var(--err);font-size:15px;text-align:center;margin:10px 0 0;min-height:0}
-.fine{font-size:13px;color:var(--muted);margin:12px 0 0;text-align:center}
-.done{display:none;text-align:center;padding:12px 0}
-.done h3{font-size:24px;color:var(--accent);margin-bottom:8px}
+#leadForm .btn{width:100%;margin-top:6px}
+.btn:disabled{opacity:.7;cursor:wait}
+.hp{position:absolute;width:1px;height:1px;margin:0;padding:0;border:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;opacity:0}
+.err-send{color:var(--err);font-size:15px;text-align:center;margin:10px 0 0}
+.fine{font-size:14px;color:var(--muted);margin:12px 0 0;text-align:center}
+.done{display:none;text-align:center;padding:40px 0}
+.done h3{font-size:30px;color:var(--signal);margin-bottom:8px}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:15px;padding:24px 0 96px;text-align:center}
 
-/* sections */
-section{padding:72px 0 0}
-.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:28px}
-.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:28px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;display:flex;gap:16px;align-items:flex-start}
-.ico{width:48px;height:48px;flex:none;border-radius:14px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center}
-.card h3{font-size:19px;margin-bottom:4px}
-.card p{margin:0;color:var(--muted);font-size:16px}
-.step .num{width:44px;height:44px;border-radius:999px;background:var(--accent);color:#fff;font-weight:800;font-size:20px;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
-.step h3{font-size:18px;margin-bottom:4px}
-.step p{margin:0;color:var(--muted);font-size:15px}
-.price{background:#fff;border:2px solid var(--accent);border-radius:28px;padding:32px 36px}
-.price-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
-.price-head .amount{font-size:clamp(48px,7vw,64px);font-weight:800;color:var(--accent);line-height:1}
-.price-head .per{font-size:18px;color:var(--muted)}
-.rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 32px;margin-top:24px;font-size:18px}
-.rows div{display:flex;justify-content:space-between;border-bottom:1px solid #ECE7F7;padding-bottom:12px}
-.price .note{font-size:15px;color:var(--muted);margin:16px 0 0}
-.faq{background:var(--tint);border-radius:18px;padding:20px 22px}
-.faq h3{font-size:18px;margin-bottom:4px}
-.faq p{margin:0;color:#3A3550;font-size:16px}
-.cta{margin:72px 0 56px;background:var(--ink);color:#fff;border-radius:28px;padding:36px 40px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
-.cta h2{font-size:30px}
-.cta p{margin:6px 0 0;color:#D9D3EE}
-footer{text-align:center;color:var(--muted);font-size:14px;padding:0 0 32px}
+.wa-float{position:fixed;left:20px;bottom:20px;width:60px;height:60px;border-radius:50%;background:var(--wa-dark);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.4);z-index:10}
 
-/* floating whatsapp */
-.wa-float{position:fixed;left:20px;bottom:20px;width:60px;height:60px;border-radius:999px;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.25);z-index:10}
-
-@media (max-width:860px){
-  .hero-grid{grid-template-columns:1fr;gap:32px;margin-top:32px}
-  .grid2{grid-template-columns:1fr}
-  .grid3{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .rows{grid-template-columns:1fr}
+@media (max-width:960px){
+  .hero{grid-template-columns:1fr;gap:40px;padding-top:16px}
+  .lead-box{grid-template-columns:1fr;padding:32px 24px}
+  .more{grid-template-columns:repeat(2,minmax(0,1fr))}
+  ol.join{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-@media (max-width:520px){
-  .stats{grid-template-columns:1fr}
-  .grid3{grid-template-columns:1fr}
-  .form-card{padding:22px}
-  .price,.cta{padding:26px 22px}
+@media (max-width:620px){
+  body{font-size:17px}
+  .top nav a:not(.btn){display:none}
+  .stage{padding:16px;min-height:0}
+  .steps button{font-size:14px;padding-inline:4px}
+  .feature{grid-template-columns:1fr;gap:12px}
+  .more,ol.join{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .calling .ring,.bubble.pop,.qa .a .caret{animation:none}
 }
 </style>
 </head>
 <body>
 
-<header class="hero">
-  <div class="wrap">
-    <div class="top">
-      <div class="brand">Star Center</div>
-      <div class="pill">מזכירות חיצונית לעסקים</div>
-    </div>
-    <div class="hero-grid">
-      <div>
-        <h1>אף שיחה לא נשארת<br>בלי מענה</h1>
-        <p class="lead">נציג אנושי עונה בשם העסק שלך, שואל את השאלות שבחרת, ושולח לך את פרטי הפנייה מיד בסיום השיחה. אתה ממשיך לעבוד, הלקוחות מקבלים מענה.</p>
-        <a class="btn btn-light" href="#lead">אני רוצה לשמוע עוד</a>
-        <div class="stats">
-          <div class="stat"><b>ללא</b><span>התחייבות</span></div>
-          <div class="stat"><b>מחירים אטרקטיביים</b></div>
-          <div class="stat"><b>ללא</b><span>דמי הקמה</span></div>
-        </div>
-      </div>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#">
+      <svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="#FFB547"><path d="m12 2 2.9 6.2 6.8.8-5 4.7 1.3 6.7L12 17.1l-6 3.3 1.3-6.7-5-4.7 6.8-.8z"/></svg>
+      Star Center
+    </a>
+    <nav aria-label="ניווט ראשי">
+      <a href="#demo">איך זה עובד</a>
+      <a href="#system">המערכת</a>
+      <a href="#faq">שאלות</a>
+      <a class="btn btn-signal" href="#lead">השארת פרטים</a>
+    </nav>
+  </header>
 
-      <div class="form-card" id="lead">
-        <form id="leadForm" novalidate>
-          <h2>נחזור אליך היום</h2>
-          <p class="sub">השאר פרטים, ונשלח לך הצעה מותאמת לעסק שלך.</p>
-          <div class="field">
-            <label for="f-name">שם מלא</label>
-            <input id="f-name" name="name" autocomplete="name" required>
-            <div class="err" id="e-name"></div>
+  <main>
+  <div class="hero">
+    <div>
+      <h1>הנציג עונה.<br>אתה מחליט מה נשאל ומה מגיע אליך.</h1>
+      <p class="lead">Star Center עונה לשיחות בשם העסק שלך, לפי תסריט שאתה כותב, ושולח לך כל פנייה בהודעה שאתה מעצב. בלי מספר חדש ובלי התקנה.</p>
+      <div class="hero-actions">
+        <a class="btn btn-signal" href="#lead">השארת פרטים</a>
+        <a class="btn btn-ghost" href="#system">מה אפשר להגדיר</a>
+      </div>
+      <ul class="facts">
+        <li><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFB547" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ללא דמי הקמה</li>
+        <li><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFB547" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ללא התחייבות</li>
+        <li><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFB547" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>מחירים אטרקטיביים</li>
+      </ul>
+    </div>
+
+    <div class="console" id="demo" role="region" aria-label="הדגמה: איך עובדת המערכת">
+      <div class="console-bar">
+        <span class="console-title">הדגמה: מרפאת שיניים</span>
+        <button class="playbtn" id="playBtn" type="button" aria-pressed="true">
+          <svg id="icoPause" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+          <svg id="icoPlay" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M17 5v14L5 12z"/></svg>
+          <span id="playLbl">עצירה</span>
+        </button>
+      </div>
+      <div class="steps" role="tablist" aria-label="שלבי ההדגמה">
+        <button role="tab" id="t0" aria-controls="p0" aria-selected="true">1. העסק מגדיר<span class="bar"><i></i></span></button>
+        <button role="tab" id="t1" aria-controls="p1" aria-selected="false" tabindex="-1">2. הנציג עונה<span class="bar"><i></i></span></button>
+        <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1">3. ההודעה מגיעה<span class="bar"><i></i></span></button>
+      </div>
+      <div class="stage">
+        <div class="panel" id="p0" role="tabpanel" aria-labelledby="t0">
+          <h3>התסריט וההודעה שלך</h3>
+          <p class="hint">את זה אתה כותב בחשבון שלך. נסה לשנות את ההודעה.</p>
+          <span class="field-label">השאלות שהנציג ישאל</span>
+          <div class="chip-row">
+            <span class="qchip">שם המטופל</span>
+            <span class="qchip">טלפון לחזרה</span>
+            <span class="qchip">סיבת הפנייה</span>
+            <span class="qchip">מועד מועדף <small>(רק אם רוצים תור)</small></span>
           </div>
-          <div class="field">
-            <label for="f-biz">שם העסק</label>
-            <input id="f-biz" name="business" autocomplete="organization">
+          <label class="field-label" for="tpl">ההודעה שתגיע אליך בוואטסאפ</label>
+          <textarea class="tpl" id="tpl" dir="rtl"></textarea>
+          <div class="tokens" role="group" aria-label="הוספת פרט להודעה">
+            <button type="button" data-t="{שם}">+ שם</button>
+            <button type="button" data-t="{טלפון}">+ טלפון</button>
+            <button type="button" data-t="{סיבה}">+ סיבה</button>
+            <button type="button" data-t="{מועד}">+ מועד</button>
           </div>
-          <div class="field">
-            <label for="f-phone">טלפון</label>
-            <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" style="text-align:right" placeholder="050-0000000" required>
-            <div class="err" id="e-phone"></div>
-          </div>
-          <div class="field">
-            <label for="f-type">תחום העסק</label>
-            <select id="f-type" name="type">
-              <option value="">בחר תחום</option>
-              <option>משרד עורכי דין</option>
-              <option>עמותה</option>
-              <option>מרפאה / קליניקה</option>
-              <option>בעל מקצוע</option>
-              <option>אחר</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="f-msg">משהו שחשוב לך שנדע (לא חובה)</label>
-            <textarea id="f-msg" name="message"></textarea>
-          </div>
-          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <button class="btn" type="submit" id="sendBtn">שליחה</button>
-          <p class="err-send" id="sendErr" role="alert"></p>
-          <p class="fine">הפרטים יגיעו אלינו, ונחזור אליך בהקדם.</p>
-        </form>
-        <div class="done" id="done" role="status" aria-live="polite" tabindex="-1">
-          <h3>תודה, קיבלנו!</h3>
-          <p>נחזור אליך בהקדם.</p>
         </div>
+
+        <div class="panel" id="p1" role="tabpanel" aria-labelledby="t1" hidden>
+          <div class="call-head" id="callHead">
+            <div class="ring"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="#2B1A00"><path d="M20 15.5a11.4 11.4 0 0 1-3.6-.6 1 1 0 0 0-1 .3l-2.2 2.2a15 15 0 0 1-6.6-6.6l2.2-2.2a1 1 0 0 0 .3-1A11.4 11.4 0 0 1 8.5 4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1 17 17 0 0 0 17 17 1 1 0 0 0 1-1v-3.5a1 1 0 0 0-1-1z"/></svg></div>
+            <div><b>שיחה נכנסת למרפאה</b><span>הנציג רואה את התסריט שלך ומקליד את התשובות</span></div>
+          </div>
+          <ol class="qa" id="qa"></ol>
+        </div>
+
+        <div class="panel" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+          <div class="phone">
+            <div class="wa-top">
+              <div class="av">SC</div>
+              <div>Star Center<small>הודעה חדשה</small></div>
+            </div>
+            <div class="wa-body"><div class="bubble" id="bubble"></div></div>
+          </div>
+        </div>
+        <p class="demo-note">הדגמה עם פרטים לדוגמה.</p>
       </div>
     </div>
   </div>
-</header>
 
-<main class="wrap">
-  <section aria-labelledby="why">
-    <h2 id="why">למה להצטרף</h2>
-    <div class="grid2">
-      <div class="card"><div class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5B21B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div><h3>הרבה יותר ממענה</h3><p>טיפול בפניות, גבייה וכל משימה טלפונית שתגדיר במערכת.</p></div></div>
-      <div class="card"><div class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5B21B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div><div><h3>בלי מספר חדש ובלי התקנה</h3><p>מפנים את המספר הקיים, והלקוחות ממשיכים לחייג אליו.</p></div></div>
-      <div class="card"><div class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5B21B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div><div><h3>התסריט שלך</h3><p>אתה קובע מה הנציג אומר ושואל, ומשנה מתי שרוצה.</p></div></div>
-      <div class="card"><div class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5B21B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></div><div><h3>פרטי הפנייה מיד</h3><p>סיכום של כל שיחה מגיע אליך ברגע שהיא מסתיימת.</p></div></div>
-      <div class="card"><div class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5B21B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><div><h3>קביעת תורים במערכת שלך</h3><p>הנציג פותח את מערכת התורים שלך ישירות מהמסך.</p></div></div>
-      <div class="card"><div class="ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5B21B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div><div><h3>אתה בוחר מי עונה</h3><p>לכל נציג ציון על מהירות ואיכות המענה, ואתה מדרג שיחות.</p></div></div>
+  <section id="system" aria-labelledby="sys-h">
+    <div class="sec-head">
+      <h2 id="sys-h">מה אתה מנהל בעצמך</h2>
+      <p>הכול נמצא בחשבון שלך, ומשתנה מהשיחה הבאה. בלי לבקש מאיתנו ובלי ידע טכני.</p>
+    </div>
+
+    <div class="feature">
+      <div class="ico"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFB547" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div>
+      <div><h3>תסריט שיחה שאתה כותב</h3><p>נוסח הפתיחה, השאלות שהנציג שואל, ושאלות שמופיעות רק לפי תשובה קודמת. למשל: "רוצה לקבוע תור?" ורק אם כן, "מתי נוח לך?".</p></div>
+    </div>
+    <div class="feature">
+      <div class="ico"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFB547" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></div>
+      <div><h3>הודעה מסודרת אחרי כל שיחה</h3><p>אתה מעצב את ההודעה: אילו פרטים יופיעו ובאיזה סדר. בסיום כל שיחה היא נשלחת אליך, ואתה רואה מיד מי התקשר ומה הוא צריך.</p></div>
+    </div>
+    <div class="feature">
+      <div class="ico"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFB547" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+      <div><h3>חיבור למערכות שלך</h3><p>כפתורים במסך הנציג פותחים את יומן התורים, הטופס או מערכת הלקוחות שלך, עם פרטי המתקשר כבר ממולאים. כך הנציג קובע תור או פותח פנייה במקום, בזמן השיחה.</p></div>
+    </div>
+
+    <div class="more">
+      <div><b>כרטיס מידע על העסק</b><span>שעות, כתובות ונוהל לדחוף, מול עיני הנציג.</span></div>
+      <div><b>תשובות מוכנות</b><span>אתה כותב תשובות לשאלות הנפוצות, והנציג משתמש בהן.</span></div>
+      <div><b>היסטוריית מתקשר</b><span>הנציג רואה פניות קודמות של אותו לקוח.</span></div>
+      <div><b>אתה בוחר מי עונה</b><span>ציון לכל נציג על מהירות ואיכות, ודירוג שיחות.</span></div>
+      <div><b>גבייה וטיפול בפניות</b><span>כל משימה טלפונית שתגדיר, לא רק מענה.</span></div>
+      <div><b>בלי התקנה</b><span>עובד מהדפדפן, במחשב ובטלפון.</span></div>
     </div>
   </section>
 
-  <section aria-labelledby="how">
-    <h2 id="how">איך מצטרפים</h2>
-    <div class="grid3">
-      <div class="step"><div class="num">1</div><h3>שיחת היכרות</h3><p>נשמע מה העסק צריך ונשלח הצעת מחיר.</p></div>
-      <div class="step"><div class="num">2</div><h3>פתיחת חשבון</h3><p>נפתח לך חשבון ונרשום את מספר הטלפון של העסק.</p></div>
-      <div class="step"><div class="num">3</div><h3>כתיבת התסריט</h3><p>נוסח פתיחה, שאלות, מידע על העסק ותשובות מוכנות.</p></div>
-      <div class="step"><div class="num">4</div><h3>יעד להודעות</h3><p>אתה בוחר לאן מגיע סיכום כל שיחה.</p></div>
-      <div class="step"><div class="num">5</div><h3>הפניית הקו</h3><p>מפנים את השיחות מהמספר שלך אלינו. נעזור בהגדרה.</p></div>
-      <div class="step"><div class="num">6</div><h3>ניסיון והפעלה</h3><p>שיחת ניסיון משותפת, והשירות פועל.</p></div>
-    </div>
+  <section aria-labelledby="join-h">
+    <div class="sec-head"><h2 id="join-h">איך מצטרפים</h2></div>
+    <ol class="join">
+      <li><h3>שיחת היכרות</h3><p>נשמע מה העסק צריך ונשלח הצעת מחיר.</p></li>
+      <li><h3>הגדרת החשבון</h3><p>אתה כותב את התסריט ואת ההודעה, ואנחנו עוזרים בכל שלב.</p></li>
+      <li><h3>הפניית הקו והפעלה</h3><p>מפנים את השיחות מהמספר שלך, עושים שיחת ניסיון, והשירות פועל.</p></li>
+    </ol>
   </section>
 
-  <section aria-labelledby="price">
-    <div class="price">
-      <div class="price-head">
-        <div><h2 id="price">מחירים אטרקטיביים</h2><div style="color:var(--muted);margin-top:6px">משלמים רק על דקות השיחה, בלי דמי הקמה ובלי התחייבות. דקות שלא נוצלו עוברות לחודש הבא.</div></div>
-        <a class="btn btn-accent" href="#lead">לקבלת הצעת מחיר</a>
+  <section id="faq" class="faq" aria-labelledby="faq-h">
+    <div class="sec-head"><h2 id="faq-h">שאלות נפוצות</h2></div>
+    <details><summary>איך נקבע המחיר?</summary><p>משלמים רק על דקות השיחה בפועל. נשלח לך הצעת מחיר מותאמת לכמות השיחות של העסק.</p></details>
+    <details><summary>מה קורה לדקות שלא ניצלתי?</summary><p>הן פשוט עוברות לחודש הבא, ולא הולכות לאיבוד.</p></details>
+    <details><summary>אפשר לשנות את התסריט ואת ההודעה?</summary><p>כן, בעצמך בחשבון שלך. השינוי נכנס מהשיחה הבאה.</p></details>
+    <details><summary>יש התחייבות?</summary><p>אין התחייבות לתקופה. ביטול בהודעה של 30 יום מראש.</p></details>
+  </section>
+
+  <div class="lead-box" id="lead">
+    <div class="intro">
+      <h2>רוצה לראות את זה על העסק שלך?</h2>
+      <p>השאר פרטים, ונחזור אליך עם הצעה מותאמת.</p>
+    </div>
+    <div>
+      <form id="leadForm" novalidate>
+        <div class="field">
+          <label for="f-name">שם מלא</label>
+          <input id="f-name" name="name" autocomplete="name" required>
+          <div class="err" id="e-name"></div>
+        </div>
+        <div class="field">
+          <label for="f-biz">שם העסק</label>
+          <input id="f-biz" name="business" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="f-phone">טלפון</label>
+          <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" style="text-align:right" placeholder="050-0000000" required>
+          <div class="err" id="e-phone"></div>
+        </div>
+        <div class="field">
+          <label for="f-type">תחום העסק</label>
+          <select id="f-type" name="type">
+            <option value="">בחר תחום</option>
+            <option>משרד עורכי דין</option>
+            <option>עמותה</option>
+            <option>מרפאה / קליניקה</option>
+            <option>בעל מקצוע</option>
+            <option>אחר</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-msg">משהו שחשוב לך שנדע (לא חובה)</label>
+          <textarea id="f-msg" name="message"></textarea>
+        </div>
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-signal" type="submit" id="sendBtn">שליחה</button>
+        <p class="err-send" id="sendErr" role="alert"></p>
+        <p class="fine">הפרטים יגיעו אלינו, ונחזור אליך בהקדם.</p>
+      </form>
+      <div class="done" id="done" role="status" aria-live="polite" tabindex="-1">
+        <h3>תודה, קיבלנו!</h3>
+        <p>נחזור אליך בהקדם.</p>
       </div>
     </div>
-  </section>
-
-  <section aria-labelledby="faq">
-    <h2 id="faq">שאלות נפוצות</h2>
-    <div class="grid2">
-      <div class="faq"><h3>מה קורה לדקות שלא ניצלתי?</h3><p>הן פשוט עוברות לחודש הבא, ולא הולכות לאיבוד.</p></div>
-      <div class="faq"><h3>אפשר לשנות את התסריט?</h3><p>כן, בעצמך בחשבון שלך. השינוי נכנס מהשיחה הבאה.</p></div>
-      <div class="faq"><h3>איך נקבע המחיר?</h3><p>משלמים רק על דקות השיחה בפועל. נשלח לך הצעת מחיר מותאמת לכמות השיחות של העסק.</p></div>
-      <div class="faq"><h3>יש התחייבות?</h3><p>אין התחייבות לתקופה. ביטול בהודעה של 30 יום מראש.</p></div>
-    </div>
-  </section>
-
-  <div class="cta">
-    <div><h2>מוכנים להתחיל?</h2><p>השאירו פרטים ונחזור אליכם עוד היום.</p></div>
-    <a class="btn btn-accent" href="#lead">להשארת פרטים</a>
   </div>
-</main>
+  </main>
+</div>
 
 <footer>© <span id="year"></span> Star Center</footer>
 
@@ -231,27 +363,139 @@ footer{text-align:center;color:var(--muted);font-size:14px;padding:0 0 32px}
 </a>
 
 <script>
-// ===== הגדרה: מספר הוואטסאפ שאליו יגיעו הלידים =====
-// בפורמט בינלאומי, בלי 0 בהתחלה ובלי מקפים. לדוגמה: 050-1234567 -> 972501234567
+// ===== הגדרה: מספר הוואטסאפ ומפתח הטופס =====
 const WHATSAPP_NUMBER = "972538321973";
 // מפתח Web3Forms – הלידים נשלחים למייל שנרשם איתו
 const WEB3FORMS_KEY = "b0e25733-11c1-42a9-b33d-926bd9f5710a";
-// ====================================================
+// ============================================
 
 const waUrl = (text) => "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text);
-
 document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("waFloat").href = waUrl("היי, אשמח לשמוע על שירות המזכירות החיצונית");
 
+/* ---------- הדגמה ---------- */
+(function () {
+  const SAMPLE = { "שם": "דנה לוי", "טלפון": "054-1234567", "סיבה": "כאב בשן אחורית", "מועד": "מחר בבוקר" };
+  const QUESTIONS = [["שם המטופל", "שם"], ["טלפון לחזרה", "טלפון"], ["סיבת הפנייה", "סיבה"], ["מתי נוח להגיע?", "מועד"]];
+  const tpl = document.getElementById("tpl");
+  tpl.value = "פנייה חדשה למרפאה\nשם: {שם}\nטלפון: {טלפון}\nסיבה: {סיבה}\nמועד מועדף: {מועד}";
+
+  const tabs = [0, 1, 2].map(i => document.getElementById("t" + i));
+  const panels = [0, 1, 2].map(i => document.getElementById("p" + i));
+  const playBtn = document.getElementById("playBtn");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const DUR = [6000, 7500, 6000];
+  let step = 0, playing = !reduce, t0 = 0, timers = [];
+
+  const clearTimers = () => { timers.forEach(clearTimeout); timers = []; };
+  const fill = (text) => text.replace(/\{(שם|טלפון|סיבה|מועד)\}/g, (_, k) => SAMPLE[k]);
+
+  function renderBubble(animate) {
+    const b = document.getElementById("bubble");
+    b.textContent = fill(tpl.value);
+    const t = document.createElement("time");
+    const d = new Date();
+    t.textContent = String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0");
+    b.appendChild(t);
+    if (animate && !reduce) { b.classList.remove("pop"); void b.offsetWidth; b.classList.add("pop"); }
+  }
+  function renderCall(animate) {
+    const ol = document.getElementById("qa");
+    const head = document.getElementById("callHead");
+    ol.textContent = "";
+    const items = QUESTIONS.map(([q]) => {
+      const li = document.createElement("li");
+      const qd = document.createElement("div"); qd.className = "q"; qd.textContent = q;
+      const ad = document.createElement("div"); ad.className = "a";
+      li.append(qd, ad); ol.appendChild(li); return li;
+    });
+    if (!animate || reduce) {
+      items.forEach((li, i) => { li.classList.add("filled"); li.querySelector(".a").textContent = SAMPLE[QUESTIONS[i][1]]; });
+      head.classList.remove("calling"); return;
+    }
+    head.classList.add("calling");
+    let delay = 500;
+    items.forEach((li, i) => {
+      const ans = SAMPLE[QUESTIONS[i][1]];
+      const a = li.querySelector(".a");
+      timers.push(setTimeout(() => li.classList.add("on"), delay));
+      for (let c = 1; c <= ans.length; c++) {
+        timers.push(setTimeout(() => {
+          a.textContent = ans.slice(0, c);
+          const caret = document.createElement("span"); caret.className = "caret"; a.appendChild(caret);
+        }, delay + 250 + c * 45));
+      }
+      delay += 250 + ans.length * 45 + 300;
+      timers.push(setTimeout(() => { li.classList.remove("on"); li.classList.add("filled"); a.textContent = ans; }, delay));
+    });
+    timers.push(setTimeout(() => head.classList.remove("calling"), delay));
+  }
+  function show(i, fromUser) {
+    step = i; clearTimers();
+    tabs.forEach((t, k) => {
+      const on = k === i;
+      t.setAttribute("aria-selected", on); t.tabIndex = on ? 0 : -1;
+      t.classList.toggle("past", k < i);
+      t.style.setProperty("--p", "0%");
+      panels[k].hidden = !on;
+    });
+    if (i === 1) renderCall(playing || fromUser);
+    if (i === 2) renderBubble(true);
+    t0 = performance.now();
+    if (fromUser) tabs[i].focus();
+  }
+  function tick(now) {
+    if (playing) {
+      const p = Math.min(1, (now - t0) / DUR[step]);
+      tabs[step].style.setProperty("--p", (p * 100).toFixed(1) + "%");
+      if (p >= 1) show((step + 1) % 3, false);
+    }
+    requestAnimationFrame(tick);
+  }
+  function setPlaying(on) {
+    playing = on;
+    playBtn.setAttribute("aria-pressed", on);
+    document.getElementById("playLbl").textContent = on ? "עצירה" : "הפעלה";
+    document.getElementById("icoPause").style.display = on ? "" : "none";
+    document.getElementById("icoPlay").style.display = on ? "none" : "";
+    if (on) {
+      const done = (parseFloat(tabs[step].style.getPropertyValue("--p")) || 0) / 100;
+      t0 = performance.now() - done * DUR[step];
+    }
+  }
+
+  tabs.forEach((t, i) => {
+    t.addEventListener("click", () => { setPlaying(false); show(i, true); });
+    t.addEventListener("keydown", e => {
+      const dir = e.key === "ArrowLeft" ? 1 : e.key === "ArrowRight" ? -1 : 0;
+      if (dir) { e.preventDefault(); setPlaying(false); show((i + dir + 3) % 3, true); }
+    });
+  });
+  playBtn.addEventListener("click", () => setPlaying(!playing));
+  tpl.addEventListener("focus", () => setPlaying(false));
+  tpl.addEventListener("input", () => renderBubble(false));
+  document.querySelectorAll(".tokens button").forEach(b => b.addEventListener("click", () => {
+    setPlaying(false);
+    const s = tpl.selectionStart ?? tpl.value.length, e = tpl.selectionEnd ?? s;
+    tpl.value = tpl.value.slice(0, s) + b.dataset.t + tpl.value.slice(e);
+    tpl.focus(); tpl.selectionStart = tpl.selectionEnd = s + b.dataset.t.length;
+    renderBubble(false);
+  }));
+
+  renderBubble(false);
+  setPlaying(playing);
+  show(0, false);
+  requestAnimationFrame(tick);
+})();
+
+/* ---------- טופס לידים ---------- */
 const form = document.getElementById("leadForm");
 const phoneOk = (v) => /^0\d{1,2}-?\d{7}$/.test(v.replace(/[\s]/g, "")) || /^\+?972\d{8,9}$/.test(v.replace(/[\s-]/g, ""));
-
 function setErr(id, msg) {
   const el = document.getElementById("e-" + id);
   el.textContent = msg;
   el.parentElement.classList.toggle("invalid", !!msg);
 }
-
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const v = Object.fromEntries(new FormData(form).entries());
