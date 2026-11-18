@@ -45,14 +45,14 @@ h1,h2,h3{font-family:"Secular One",Assistant,sans-serif;font-weight:400;margin:0
 .bg i:nth-child(4){width:560px;height:560px;background:#2563EB;bottom:-200px;right:10%;opacity:.45}
 
 /* משטח זכוכית */
-.glass,.top,.console,.feature,.more,ol.join li,.faq details,.lead-box{
+.glass,.top,.console,.feature,.more,.mobile,ol.join li,.faq details,.lead-box{
   background:var(--glass);
   -webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);
   border:1px solid var(--edge);
   box-shadow:var(--lift);
 }
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
-  .glass,.top,.console,.feature,.more,ol.join li,.faq details,.lead-box{background:rgba(46,30,90,.92)}
+  .glass,.top,.console,.feature,.more,.mobile,ol.join li,.faq details,.lead-box{background:rgba(46,30,90,.92)}
 }
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;font:inherit;font-weight:800;font-size:18px;text-decoration:none;border:0;cursor:pointer}
@@ -132,6 +132,13 @@ h1,h2,h3{font-family:"Secular One",Assistant,sans-serif;font-weight:400;margin:0
 .bubble.pop{animation:pop .35s ease-out}
 @keyframes pop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
 .demo-note{color:var(--muted);font-size:13px;text-align:center;margin:14px 0 0}
+.mobile{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;margin-top:-60px;padding:26px 30px;border-radius:30px}
+.mobile .ico{width:60px;height:60px;border-radius:20px;background:rgba(255,181,71,.14);border:1px solid rgba(255,181,71,.35);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+.mobile h2{font-size:clamp(22px,2.6vw,28px);margin:0 0 6px}
+.mobile p{margin:0;color:var(--muted);font-size:17px}
+.mobile ul{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 20px;font-size:16px}
+.mobile li{display:flex;align-items:center;gap:8px}
+@media (max-width:640px){.mobile{grid-template-columns:1fr;padding:22px}}
 
 section{padding:88px 0 0}
 .sec-head{max-width:640px;margin-bottom:32px}
@@ -204,7 +211,7 @@ footer{color:var(--muted);font-size:15px;padding:8px 0 96px;text-align:center}
   .calling .ring,.bubble.pop,.qa .a .caret{animation:none}
 }
 @media (prefers-reduced-transparency:reduce){
-  .glass,.top,.console,.feature,.more,ol.join li,.faq details,.lead-box{background:rgba(46,30,90,.95);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .glass,.top,.console,.feature,.more,.mobile,ol.join li,.faq details,.lead-box{background:rgba(46,30,90,.95);-webkit-backdrop-filter:none;backdrop-filter:none}
 }
 </style>
 </head>
@@ -295,6 +302,19 @@ footer{color:var(--muted);font-size:15px;padding:8px 0 96px;text-align:center}
         </div>
         <p class="demo-note">הדגמה עם פרטים לדוגמה.</p>
       </div>
+    </div>
+  </div>
+
+  <div class="mobile" role="region" aria-labelledby="mob-h">
+    <div class="ico"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFB547" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
+    <div>
+      <h2 id="mob-h">הפניות אצלך בנייד</h2>
+      <p>אתה, או מי שהרשית בעסק, עונים ומטפלים בכל פנייה ישירות מהטלפון.</p>
+      <ul>
+        <li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFB547" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>בלי התקנה</li>
+        <li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFB547" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>הרשאה לשותף או לעובד</li>
+        <li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFB547" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>כל הפניות במקום אחד</li>
+      </ul>
     </div>
   </div>
 
